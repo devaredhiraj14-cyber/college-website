@@ -202,7 +202,7 @@
             color: #ddd;
         }
 
-        /* Main Layout with Sidebar (PC Layout Default: Sidebar Left, Content Right) */
+        /* Main Layout with Sidebar */
         .main-layout {
             max-width: 1200px;
             margin: 40px auto;
@@ -485,10 +485,12 @@
             background-color: #cc0000;
             color: white;
             padding: 12px 25px;
+            border: none;
             border-radius: 4px;
             font-weight: 700;
             text-transform: uppercase;
-            text-decoration: none;
+            font-family: inherit;
+            cursor: pointer;
             transition: background 0.3s;
             white-space: nowrap;
         }
@@ -497,12 +499,80 @@
             background-color: #a30000;
         }
 
+        /* Modal Styles */
+        .modal-overlay {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.6); 
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto; 
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #cc0000;
+        }
+
+        .modal-content h2 {
+            color: #cc0000;
+            margin-bottom: 20px;
+        }
+
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .modal-content input, .modal-content textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .submit-btn {
+            background-color: #ffcc00;
+            color: #000;
+            font-weight: 700;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #e6b800;
+        }
+
         /* Responsive Breakpoints for Tablet & Mobile */
         @media (max-width: 992px) {
             .main-layout {
                 grid-template-columns: 1fr;
             }
-            /* On mobile/tablet, place content first and sidebar (menu) below it */
             .main-layout {
                 display: flex;
                 flex-direction: column-reverse;
@@ -889,10 +959,25 @@
             <h4>Need More Information Regarding Placements?</h4>
             <p>Contact the training and placement cell team for upcoming drives and company criteria details.</p>
         </div>
-        <a href="#" class="enquiry-btn">Placement Enquiry &rarr;</a>
+        <button onclick="openModal()" class="enquiry-btn">Placement Enquiry &rarr;</button>
     </div>
 
-    <!-- JavaScript for Tab Switching and Mobile Nav Toggle -->
+    <!-- Enquiry Modal -->
+    <div id="enquiryModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Placement Enquiry</h2>
+            <form onsubmit="submitForm(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Mobile Number" required>
+                <textarea placeholder="Your Query..." rows="4" required></textarea>
+                <button type="submit" class="submit-btn">Send Enquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for Tab Switching, Mobile Nav Toggle, and Modal -->
     <script>
         function switchTab(evt, tabId) {
             if(evt) evt.preventDefault();
@@ -913,6 +998,30 @@
         function toggleNav() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
+        }
+
+        // Modal Logic
+        function openModal() {
+            document.getElementById("enquiryModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("enquiryModal").style.display = "none";
+        }
+
+        // Close modal if user clicks outside the box
+        window.onclick = function(event) {
+            let modal = document.getElementById("enquiryModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Form Submission
+        function submitForm(event) {
+            event.preventDefault(); 
+            alert("Thank you! Your enquiry has been sent to the Placement Cell.");
+            closeModal();
         }
     </script>
 
