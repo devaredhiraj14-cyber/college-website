@@ -874,7 +874,7 @@ a {
     font-size: 10px;
 }
 
-3 .support-grid button:last-child {
+.support-grid button:last-child {
     border-right: none;
 }
 
