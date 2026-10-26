@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Corner Portal - SSBT's Arts, Commerce & Science College, Bambhori, Jalgaon. Access notices, timetables, results, study materials, and scholarships.">
+    <meta name="theme-color" content="#0b1f3a">
+    <title>Student Corner Portal | SSBT's Arts, Commerce & Science College, Jalgaon</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      /* Smooth integration adjustments */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255,255,255,.98);
+        border-bottom: 1px solid rgba(11,31,58,.08);
+        backdrop-filter: blur(16px);
+      }
+      .brand-logo-img {
+        height: 44px;
+        width: auto;
+        object-fit: contain;
+        border-radius: 4px;
+      }
+      .student-portal-hero {
+        background: linear-gradient(135deg, rgba(9, 35, 77, 0.95) 0%, rgba(6, 27, 61, 0.95) 100%),
+                    url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+        color: #fff;
+        padding: 55px 0 50px;
+        border-bottom: 3px solid var(--gold);
+      }
+      .student-portal-hero h1 {
+        font-family: var(--serif);
+        font-size: clamp(32px, 4vw, 48px);
+        margin-bottom: 12px;
+      }
+      .student-portal-hero h1 em {
+        color: var(--gold-light);
+        font-style: italic;
+      }
+      .student-portal-hero p {
+        font-size: 15px;
+        color: #d8e2f0;
+        max-width: 650px;
+        line-height: 1.7;
+      }
+      .portal-quick-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 22px;
+        flex-wrap: wrap;
+      }
+    </style>
+</head>
+<body>
+
+    <!-- TOP UTILITY BAR -->
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <div class="utility-left">
+          <span><i class="bi bi-geo-alt"></i> Bambhori, Jalgaon (MS) - 425001</span>
+          <span><i class="bi bi-telephone"></i> 0257-2285931 / 93 / 94</span>
+          <span><i class="bi bi-envelope"></i> ssacscjalgaon@gmail.com</span>
+        </div>
+        <div class="utility-right">
+          <span class="badge-accreditation"><i class="bi bi-award"></i> NAAC Accredited 'B' Grade</span>
+          <span class="utility-divider">|</span>
+          <a href="#" onclick="openModal('Student Login')"><i class="bi bi-person-fill"></i> Student Login</a>
+          <span class="utility-divider">|</span>
+          <a href="#" onclick="openModal('Staff Login')"><i class="bi bi-shield-lock-fill"></i> Staff Login</a>
+          <span class="utility-divider">|</span>
+          <a href="admission.html#enquiry" style="color: var(--gold-light); font-weight: 700;"><i class="bi bi-pencil-square"></i> Apply Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="site-header" id="top">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a class="brand" href="index.html" aria-label="SSBT College Home">
+          <img src="https://ssacscjalgaon.ac.in/public/images/logo.png" alt="SSBT Logo" class="brand-logo-img" onerror="this.style.display='none'">
+          <span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span>
+          <span class="brand-copy">
+            <strong>SSBT's Arts, Commerce &amp; Science College</strong>
+            <small>Bambhori, Jalgaon &bull; Affiliated to KBCNMU</small>
+          </span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="about.html">About Us</a>
+          <a class="nav-link" href="departments.html">Departments</a>
+          <a class="nav-link" href="admission.html">Admissions</a>
+          <a class="nav-link" href="placement.html">Placements</a>
+          <a class="nav-link active" href="student-corner.html">Student Corner</a>
+          <a class="nav-link" href="contact.html">Contact Us</a>
+        </div>
+        <a class="button button-small button-gold nav-cta" href="admission.html#enquiry">Apply Now <i class="bi bi-arrow-up-right"></i></a>
+      </nav>
+    </header>
+
+    <!-- PORTAL HERO -->
+    <section class="student-portal-hero">
+      <div class="container">
+        <div class="breadcrumb" style="color: var(--gold-light); margin-bottom: 12px; font-size: 11px;">
+          <a href="index.html" style="color: #cbd5e1;">HOME</a> &nbsp;/&nbsp; STUDENT CORNER PORTAL
+        </div>
+        <div class="eyebrow eyebrow-light"><span></span> ACADEMIC SELF-SERVICE PORTAL</div>
+        <h1>Your Academic Journey, <em>All in One Place.</em></h1>
+        <p>Access program-wise notices, lecture timetables, semester syllabi, exam schedules, hall tickets, previous question papers, and government scholarship resources.</p>
+        <div class="portal-quick-actions">
+          <a href="#courses" class="button button-small button-gold">Select Your Course <i class="bi bi-arrow-down"></i></a>
+          <button class="button button-small button-outline-light" onclick="openSearch()">Quick Search <i class="bi bi-search"></i></button>
+          <button class="button button-small button-outline-light" onclick="openModal('Student Login')">Student Login <i class="bi bi-box-arrow-in-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN STUDENT CORNER CONTENT -->
+    <main id="studentCorner">
+
+        <!-- COURSES -->
+        <section class="course-section" id="courses">
+            <div class="section-heading">
+                <div>
+                    <span>ACADEMIC PROGRAMS</span>
+                    <h2>Select Your Course</h2>
+                    <p>Choose your course to view tailored academic resources, examination updates and notices.</p>
+                </div>
+                <div class="heading-note">
+                    Build Your Future With Us
+                </div>
+            </div>
+
+            <div class="course-grid">
+                <button class="course-card bca" onclick="selectCourse('BCA')">
+                    <div class="course-icon"><span>&lt;/&gt;</span></div>
+                    <div class="course-text">
+                        <h3>B.C.A.</h3>
+                        <p>Bachelor of Computer Applications</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </button>
+
+                <button class="course-card bsc" onclick="selectCourse('BSC')">
+                    <div class="course-icon"><span>⚗</span></div>
+                    <div class="course-text">
+                        <h3>B.Sc.</h3>
+                        <p>Bachelor of Science (CS &amp; General)</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </button>
+
+                <button class="course-card bba" onclick="selectCourse('BBA')">
+                    <div class="course-icon"><span>↗</span></div>
+                    <div class="course-text">
+                        <h3>B.B.A.</h3>
+                        <p>Bachelor of Business Administration</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </button>
+
+                <button class="course-card all" onclick="selectCourse('ALL')">
+                    <div class="course-icon"><span>▦</span></div>
+                    <div class="course-text">
+                        <h3>All Courses</h3>
+                        <p>View all academic programs</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- COURSE RESULT -->
+        <section class="course-result" id="courseResult">
+            <div class="result-inner">
+                <div class="result-icon">✓</div>
+                <div>
+                    <span>STUDENT RESOURCES</span>
+                    <h2 id="courseResultTitle">Select a course to view resources</h2>
+                    <p id="courseResultText">Notices, study material, downloads, results and timetable will appear here.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESOURCE AREA -->
+        <section class="resource-area">
+
+            <!-- NOTICES -->
+            <div class="notices-box">
+                <div class="box-header">
+                    <div class="box-title">
+                        <span class="title-icon">!</span>
+                        <div>
+                            <h2>Latest Notices</h2>
+                            <p>Important announcements for students</p>
+                        </div>
+                    </div>
+                    <button onclick="showAllNotices()">View All →</button>
+                </div>
+
+                <div class="notice-list">
+                    <div class="notice">
+                        <div class="notice-date">
+                            <strong>16</strong>
+                            <span>Aug 2026</span>
+                        </div>
+                        <div class="notice-content">
+                            <h3>Semester Examination Form Submission</h3>
+                            <p>KBCNMU winter semester exam forms submission window is now open. Confirm with the exam cell.</p>
+                        </div>
+                        <button onclick="viewNotice('Semester Examination Notice')" aria-label="View Notice">→</button>
+                    </div>
+
+                    <div class="notice">
+                        <div class="notice-date">
+                            <strong>12</strong>
+                            <span>Aug 2026</span>
+                        </div>
+                        <div class="notice-content">
+                            <h3>Internal Assessment &amp; Practical Submission</h3>
+                            <p>Submit all term work and computer lab journals to your respective department before the deadline.</p>
+                        </div>
+                        <button onclick="viewNotice('Assignment Submission Notice')" aria-label="View Notice">→</button>
+                    </div>
+
+                    <div class="notice">
+                        <div class="notice-date">
+                            <strong>08</strong>
+                            <span>Aug 2026</span>
+                        </div>
+                        <div class="notice-content">
+                            <h3>MahaDBT Scholarship Form Verification</h3>
+                            <p>Students eligible for Post-Matric &amp; EBC scholarships must complete biometric verification in the office.</p>
+                        </div>
+                        <button onclick="viewNotice('Student Activity Registration')" aria-label="View Notice">→</button>
+                    </div>
+
+                    <div class="notice">
+                        <div class="notice-date">
+                            <strong>02</strong>
+                            <span>Aug 2026</span>
+                        </div>
+                        <div class="notice-content">
+                            <h3>Central Library Book Bank Renewal</h3>
+                            <p>Book bank facility cards can be renewed at the central library circulation counter this week.</p>
+                        </div>
+                        <button onclick="viewNotice('Library Membership Renewal')" aria-label="View Notice">→</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACADEMIC RESOURCES -->
+            <div class="academic-box">
+                <div class="box-header">
+                    <div class="box-title">
+                        <span class="title-icon">◆</span>
+                        <div>
+                            <h2>Academic Resources</h2>
+                            <p>Quick access to essential academic services</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-grid">
+                    <button class="resource-card study" onclick="openResource('study')">
+                        <span class="resource-icon">▤</span>
+                        <div>
+                            <h3>Study Material</h3>
+                            <p>Lecture notes &amp; references</p>
+                        </div>
+                        <span class="resource-arrow">→</span>
+                    </button>
+
+                    <button class="resource-card download" onclick="openResource('downloads')">
+                        <span class="resource-icon">↓</span>
+                        <div>
+                            <h3>Downloads</h3>
+                            <p>Forms, syllabus &amp; documents</p>
+                        </div>
+                        <span class="resource-arrow">→</span>
+                    </button>
+
+                    <button class="resource-card result" onclick="openResource('results')">
+                        <span class="resource-icon">▥</span>
+                        <div>
+                            <h3>Results</h3>
+                            <p>University &amp; college results</p>
+                        </div>
+                        <span class="resource-arrow">→</span>
+                    </button>
+
+                    <button class="resource-card timetable" onclick="openResource('timetable')">
+                        <span class="resource-icon">▣</span>
+                        <div>
+                            <h3>Timetable</h3>
+                            <p>Class &amp; lab weekly schedules</p>
+                        </div>
+                        <span class="resource-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- DYNAMIC PANEL -->
+        <section class="dynamic-section" id="dynamicSection">
+            <div id="dynamicContent">
+                <div class="dynamic-empty">
+                    <div>▣</div>
+                    <h2>Student Resource Center</h2>
+                    <p>Select a course card above or click any academic resource to view detailed links, syllabi, and schedules.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPPORT SERVICES -->
+        <section class="support-section">
+            <div class="support-header">
+                <div>
+                    <span>STUDENT SERVICES</span>
+                    <h2>Student Support Services</h2>
+                    <p>Campus facilities and committees to support your academic and personal growth.</p>
+                </div>
+                <button onclick="showServices()">Explore All Services →</button>
+            </div>
+
+            <div class="support-grid">
+                <button onclick="openService('calendar')">
+                    <span>▣</span>
+                    <strong>Academic Calendar</strong>
+                </button>
+                <button onclick="openService('clubs')">
+                    <span>♙</span>
+                    <strong>Student Clubs</strong>
+                </button>
+                <button onclick="openService('scholarship')">
+                    <span>◇</span>
+                    <strong>MahaDBT Scholarships</strong>
+                </button>
+                <button onclick="openService('activities')">
+                    <span>★</span>
+                    <strong>NSS &amp; Sports</strong>
+                </button>
+                <button onclick="openService('committees')">
+                    <span>◎</span>
+                    <strong>Anti-Ragging / Grievance</strong>
+                </button>
+                <button onclick="openService('links')">
+                    <span>↗</span>
+                    <strong>KBCNMU Portal Links</strong>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- UNIFIED FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-about">
+          <a class="brand brand-footer" href="index.html">
+            <span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span>
+            <span class="brand-copy">
+              <strong>SSBT's Arts, Commerce<br>&amp; Science College</strong>
+              <small>Bambhori, Jalgaon</small>
+            </span>
+          </a>
+          <p>Shram Sadhana Bombay Trust Sanchalit Arts, Commerce &amp; Science College provides quality higher education across Arts, Commerce, Science, Computer Applications and Management disciplines.</p>
+          <span class="footer-location"><i class="bi bi-geo-alt-fill"></i> Bambhori, Jalgaon, Maharashtra – 425001</span>
+          <span class="footer-location"><i class="bi bi-telephone-fill"></i> 0257-2285931 / 93 / 94</span>
+          <span class="footer-location"><i class="bi bi-envelope-fill"></i> ssacscjalgaon@gmail.com</span>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="about.html">About SSBT</a>
+          <a href="departments.html">Academic Departments</a>
+          <a href="admission.html">Admissions 2026-27</a>
+          <a href="placement.html">Training &amp; Placements</a>
+          <a href="student-corner.html">Student Corner Portal</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-column">
+          <h3>Academic Programs</h3>
+          <a href="departments.html#bca">B.C.A. (Computer Applications)</a>
+          <a href="departments.html#bba">B.B.A. (Business Administration)</a>
+          <a href="departments.html#bsc">B.Sc. Computer Science</a>
+          <a href="departments.html#data-science">B.Sc. Data Science</a>
+          <a href="departments.html#arts">Bachelor of Arts (B.A.)</a>
+          <a href="departments.html#commerce">Bachelor of Commerce (B.Com)</a>
+        </div>
+        <div class="footer-contact">
+          <h3>Admissions &amp; Enquiries</h3>
+          <p>Admissions are now open for the academic year 2026-27. Submit your enquiry online or visit our campus admissions office.</p>
+          <a href="admission.html#enquiry" class="button button-small button-gold" style="margin-bottom: 15px;">Apply for Admission <i class="bi bi-arrow-up-right"></i></a>
+          <p class="social-note"><i class="bi bi-shield-check"></i> Affiliated to KBC North Maharashtra University, Jalgaon. Approved by Govt. of Maharashtra.</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>&copy; <span id="currentYear">2026</span> SSBT's Arts, Commerce &amp; Science College, Bambhori, Jalgaon. All Rights Reserved.</span>
+        <a href="#top" class="back-to-top-link">Back to top &uarr;</a>
+        <span>Designed with pride by Student Web Team</span>
+      </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to Top">↑</button>
+
+    <!-- INFO MODAL -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="professional-modal">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-icon-large" id="modalIcon">◆</div>
+            <span class="modal-label">STUDENT CORNER</span>
+            <h2 id="modalTitle">Information</h2>
+            <p id="modalText">Information will appear here.</p>
+            <div class="modal-divider"></div>
+            <div id="modalExtra"></div>
+            <button class="modal-primary" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- SEARCH MODAL -->
+    <div id="searchOverlay" class="modal-overlay">
+        <div class="professional-modal search-modal">
+            <button class="modal-close" onclick="closeSearch()">×</button>
+            <div class="modal-icon-large">⌕</div>
+            <span class="modal-label">PORTAL SEARCH</span>
+            <h2>Search Student Corner</h2>
+            <div class="global-search-box">
+                <input type="text" id="searchInput" placeholder="Search notices, results, timetable, syllabus..." onkeyup="performSearch()">
+            </div>
+            <div id="searchResults" class="search-results">
+                <div class="search-hint">Type something to search student resources.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/script.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,1029 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placements - Shram Sadhana Bombay Trust's Arts, Commerce & Science College</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Top Bar */
-        .top-bar {
-            background-color: #fff;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 13px;
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .announcement {
-            color: #cc0000;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .top-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .top-links a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .top-links a:hover {
-            color: #cc0000;
-        }
-
-        /* Main Header */
-        .main-header {
-            background-color: #fff;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid #ffcc00;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .college-title h1 {
-            font-size: clamp(16px, 2vw, 20px);
-            color: #1a1a1a;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        .college-title p {
-            font-size: clamp(11px, 1.5vw, 12px);
-            color: #666;
-            letter-spacing: 0.5px;
-        }
-
-        .header-info {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .info-box {
-            background: #ffcc00;
-            padding: 8px 15px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .info-box span {
-            color: #333;
-        }
-
-        .info-box strong {
-            font-size: 13px;
-            color: #000;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            background-color: #ffcc00;
-            padding: 0 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 22px;
-            cursor: pointer;
-            color: #111;
-            padding: 15px 0;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-links li {
-            position: relative;
-        }
-
-        .nav-links a {
-            display: block;
-            padding: 15px 14px;
-            color: #111;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13.5px;
-            transition: background 0.3s;
-        }
-
-        .nav-links a:hover, .nav-links li.active-nav a {
-            background-color: #e6b800;
-        }
-
-        .apply-btn {
-            background-color: #cc0000 !important;
-            color: white !important;
-            padding: 8px 16px !important;
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-weight: 700 !important;
-            transition: background 0.3s;
-            text-decoration: none;
-            font-size: 13px;
-        }
-
-        .apply-btn:hover {
-            background-color: #a30000 !important;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            position: relative;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            min-height: 220px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 30px 8%;
-            color: white;
-        }
-
-        .hero-section h2 {
-            font-size: clamp(26px, 4vw, 36px);
-            margin-bottom: 10px;
-            font-weight: 800;
-            border-left: 5px solid #cc0000;
-            padding-left: 15px;
-        }
-
-        .hero-section p {
-            font-size: clamp(14px, 2vw, 15px);
-            max-width: 600px;
-            color: #ddd;
-        }
-
-        /* Main Layout with Sidebar */
-        .main-layout {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 30px;
-        }
-
-        /* Sidebar Styles */
-        .sidebar {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            height: fit-content;
-        }
-
-        .sidebar-header {
-            background-color: #f1f1f1;
-            padding: 15px 20px;
-            font-size: 16px;
-            font-weight: 700;
-            color: #222;
-            border-bottom: 2px solid #ffcc00;
-        }
-
-        .sidebar-menu {
-            list-style: none;
-        }
-
-        .sidebar-menu li {
-            border-bottom: 1px solid #eee;
-            cursor: pointer;
-        }
-
-        .sidebar-menu li:last-child {
-            border-bottom: none;
-        }
-
-        .sidebar-menu a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 20px;
-            color: #333;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .sidebar-menu a i {
-            color: #cc0000;
-            width: 18px;
-            text-align: center;
-        }
-
-        .sidebar-menu a:hover, .sidebar-menu li.active-tab a {
-            background-color: #ffcc00;
-            color: #000;
-            padding-left: 25px;
-        }
-
-        .sidebar-menu li.active-tab a i {
-            color: #000;
-        }
-
-        /* Content Panel Styles */
-        .content-panel {
-            background: #fff;
-            padding: clamp(15px, 3vw, 30px);
-            border-radius: 6px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            min-height: 500px;
-            overflow: hidden;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .content-title {
-            font-size: clamp(18px, 2.5vw, 22px);
-            color: #cc0000;
-            font-weight: 700;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #ffcc00;
-        }
-
-        .objectives-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .objectives-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-            font-size: 14px;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        .objectives-list li::before {
-            content: "■";
-            color: #ffcc00;
-            position: absolute;
-            left: 0;
-            font-size: 12px;
-            top: 1px;
-        }
-
-        /* Responsive Tables Wrapper */
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            margin-top: 20px;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-            min-width: 600px;
-        }
-
-        .data-table th, .data-table td {
-            border: 1px solid #ddd;
-            padding: 12px 15px;
-            text-align: left;
-        }
-
-        .data-table th {
-            background-color: #cc0000;
-            color: white;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .data-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        /* Gallery Grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .gallery-item {
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            background: #eee;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-item p {
-            padding: 10px;
-            font-size: 13px;
-            font-weight: 600;
-            text-align: center;
-            background: white;
-        }
-
-        /* Brochure Cards */
-        .brochure-card {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            background: #fafafa;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .brochure-info h4 {
-            font-size: 16px;
-            color: #222;
-            margin-bottom: 4px;
-        }
-
-        .brochure-info p {
-            font-size: 13px;
-            color: #666;
-        }
-
-        .download-btn {
-            background-color: #cc0000;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            transition: background 0.3s;
-            white-space: nowrap;
-        }
-
-        .download-btn:hover {
-            background-color: #a30000;
-        }
-
-        /* Experiences items */
-        .experience-box {
-            background: #fdfdfd;
-            border-left: 4px solid #cc0000;
-            padding: 15px 20px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .experience-box h4 {
-            font-size: 16px;
-            color: #222;
-            margin-bottom: 5px;
-        }
-
-        .experience-box span {
-            font-size: 12px;
-            color: #cc0000;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .experience-box p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        /* Bottom Callout Banner */
-        .callout-banner {
-            background-color: #1a1a1a;
-            color: white;
-            padding: 40px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 5px solid #cc0000;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 60px;
-        }
-
-        .callout-text h4 {
-            font-size: clamp(18px, 2.5vw, 22px);
-            color: #ffcc00;
-            margin-bottom: 5px;
-        }
-
-        .callout-text p {
-            color: #ccc;
-            font-size: 14px;
-        }
-
-        .enquiry-btn {
-            background-color: #cc0000;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 4px;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-family: inherit;
-            cursor: pointer;
-            transition: background 0.3s;
-            white-space: nowrap;
-        }
-
-        .enquiry-btn:hover {
-            background-color: #a30000;
-        }
-
-        /* Modal Styles */
-        .modal-overlay {
-            display: none; 
-            position: fixed; 
-            z-index: 2000; 
-            left: 0; 
-            top: 0; 
-            width: 100%; 
-            height: 100%; 
-            background-color: rgba(0,0,0,0.6); 
-        }
-
-        .modal-content {
-            background-color: #fff;
-            margin: 10% auto; 
-            padding: 30px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 500px;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-
-        .close-btn {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close-btn:hover {
-            color: #cc0000;
-        }
-
-        .modal-content h2 {
-            color: #cc0000;
-            margin-bottom: 20px;
-        }
-
-        .modal-content form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .modal-content input, .modal-content textarea {
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        .submit-btn {
-            background-color: #ffcc00;
-            color: #000;
-            font-weight: 700;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #e6b800;
-        }
-
-        /* Responsive Breakpoints for Tablet & Mobile */
-        @media (max-width: 992px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-            .main-layout {
-                display: flex;
-                flex-direction: column-reverse;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .top-bar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px 4%;
-            }
-            .top-links {
-                margin-top: 5px;
-            }
-            .main-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .header-info {
-                width: 100%;
-                justify-content: space-between;
-            }
-            .info-box {
-                flex: 1;
-            }
-            .nav-toggle {
-                display: block;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                padding-bottom: 10px;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .nav-links li {
-                width: 100%;
-                border-bottom: 1px solid rgba(0,0,0,0.05);
-            }
-            .nav-links a {
-                padding: 12px 15px;
-            }
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0 4%;
-            }
-            .apply-btn {
-                display: none;
-            }
-            .callout-banner {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Training and Placement Cell - SSBT's Arts, Commerce & Science College, Bambhori, Jalgaon. 1000+ students placed, 120+ recruiting companies, 6.5 LPA highest package. Explore top recruiters, placement statistics, and training programs.">
+  <meta name="theme-color" content="#0b1f3a">
+  <title>Training &amp; Placements | SSBT's Arts, Commerce & Science College, Jalgaon</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="announcement">
-            <i class="fa-solid fa-bullhorn"></i> Latest Announcements: Placements Drive 2026-27 Open for Final Year Students
-        </div>
-        <div class="top-links">
-            <a href="#"><i class="fa-solid fa-user-graduate"></i> Students Corner</a>
-            <a href="#"><i class="fa-solid fa-users"></i> Alumni</a>
-            <a href="#"><i class="fa-solid fa-award"></i> Scholarships</a>
-            <a href="#"><i class="fa-solid fa-circle-question"></i> FAQ</a>
-        </div>
+  <!-- TOP UTILITY BAR -->
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <div class="utility-left">
+        <span><i class="bi bi-geo-alt"></i> Bambhori, Jalgaon (MS) - 425001</span>
+        <span><i class="bi bi-telephone"></i> 0257-2285931 / 93 / 94</span>
+        <span><i class="bi bi-envelope"></i> ssacscjalgaon@gmail.com</span>
+      </div>
+      <div class="utility-right">
+        <span class="badge-accreditation"><i class="bi bi-award"></i> NAAC Accredited 'B' Grade</span>
+        <span class="utility-divider">|</span>
+        <a href="student-corner.html"><i class="bi bi-person-circle"></i> Student Portal</a>
+        <span class="utility-divider">|</span>
+        <a href="admission.html#enquiry" style="color: var(--gold-light); font-weight: 700;"><i class="bi bi-pencil-square"></i> Admissions 2026-27</a>
+      </div>
     </div>
+  </div>
 
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="logo-area">
-            <div class="college-title">
-                <h1>Shram Sadhana Bombay Trust's</h1>
-                <p style="font-size: 13px; font-weight: 700; color: #cc0000;">Arts, Commerce & Science College</p>
-                <p>Bambhori, Jalgaon (MS)</p>
-            </div>
-        </div>
-        <div class="header-info">
-            <div class="info-box">
-                <span>CALL US TODAY</span>
-                <strong>0257 - 2285931 / 93 / 94</strong>
-            </div>
-            <div class="info-box">
-                <span>ADDRESS</span>
-                <strong>Bambhori, Jalgaon (MS)</strong>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <button class="nav-toggle" onclick="toggleNav()">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="https://www.sscoetjalgaon.ac.in/">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Departments</a></li>
-            <li><a href="#">Admission</a></li>
-            <li><a href="#">Facilities</a></li>
-            <li><a href="#">Life @ SSBT</a></li>
-            <li><a href="#">Students Corner</a></li>
-            <li class="active-nav"><a href="#" style="background-color: #e6b800;">Placements</a></li>
-            <li><a href="#">Quick Links</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <a href="#" class="apply-btn">Apply Now</a>
+  <!-- STICKY SITE HEADER -->
+  <header class="site-header" id="top">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="SSBT College Home">
+        <img src="https://ssacscjalgaon.ac.in/public/images/logo.png" alt="SSBT Logo" class="brand-logo-img" onerror="this.style.display='none'">
+        <span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span>
+        <span class="brand-copy">
+          <strong>SSBT's Arts, Commerce &amp; Science College</strong>
+          <small>Bambhori, Jalgaon &bull; Affiliated to KBCNMU</small>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="departments.html">Departments</a>
+        <a class="nav-link" href="admission.html">Admissions</a>
+        <a class="nav-link active" href="placement.html">Placements</a>
+        <a class="nav-link" href="student-corner.html">Student Corner</a>
+        <a class="nav-link" href="contact.html">Contact Us</a>
+      </div>
+      <a class="button button-small button-gold nav-cta" href="admission.html#enquiry">Apply Now <i class="bi bi-arrow-up-right"></i></a>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <h2>Training & Placement Cell</h2>
-        <p>Empowering students with corporate skills, industry exposure, and exceptional career opportunities.</p>
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">HOME</a> &nbsp;/&nbsp; TRAINING &amp; PLACEMENTS
+        </div>
+        <div class="eyebrow eyebrow-light"><span></span> CORPORATE RELATIONS &amp; CAREERS</div>
+        <h1>Training &amp; <em>Placement Cell.</em></h1>
+        <p class="page-lead">Empowering talent and building careers. We bridge the gap between academic theory and corporate opportunities through structured career development, aptitude workshops, and campus recruitment drives.</p>
+        <div style="display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap;">
+          <a href="#recruiters" class="button button-gold">Our Top Recruiters <i class="bi bi-building"></i></a>
+          <a href="#records" class="button button-outline-light">Placement Statistics <i class="bi bi-bar-chart-line"></i></a>
+          <a href="#training" class="button button-outline-light">Training Modules <i class="bi bi-gear"></i></a>
+        </div>
+      </div>
     </section>
 
-    <!-- Main Content Layout with Sidebar -->
-    <div class="main-layout">
+    <!-- KEY STATS COUNTER STRIP -->
+    <section class="stats-banner" aria-label="Placement Highlights">
+      <div class="container stats-banner-grid">
+        <div class="stat-box">
+          <div class="stat-icon"><i class="bi bi-people-fill"></i></div>
+          <div class="stat-number">1000+</div>
+          <div class="stat-title">Students Placed</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon"><i class="bi bi-building-check"></i></div>
+          <div class="stat-number">120+</div>
+          <div class="stat-title">Recruiting Partners</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon"><i class="bi bi-currency-rupee"></i></div>
+          <div class="stat-number">6.5 LPA</div>
+          <div class="stat-title">Highest Package</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon"><i class="bi bi-graph-up"></i></div>
+          <div class="stat-number">3.2 LPA</div>
+          <div class="stat-title">Average Package</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN PLACEMENT CONTENT TABS -->
+    <section class="section-pad" style="background: #fff;">
+      <div class="container tabs-wrapper">
         
-        <!-- Sidebar Navigation -->
-        <div class="sidebar">
-            <div class="sidebar-header">Departmental Links</div>
-            <ul class="sidebar-menu">
-                <li class="active-tab" onclick="switchTab(event, 'tab-cell')">
-                    <a href="#cell"><i class="fa-solid fa-chevron-right"></i> Training & Placement Cell</a>
-                </li>
-                <li onclick="switchTab(event, 'tab-recruiters')">
-                    <a href="#recruiters"><i class="fa-solid fa-chevron-right"></i> Our Recruiters</a>
-                </li>
-                <li onclick="switchTab(event, 'tab-record')">
-                    <a href="#record"><i class="fa-solid fa-chevron-right"></i> Placement Record</a>
-                </li>
-                <li onclick="switchTab(event, 'tab-gallery')">
-                    <a href="#gallery"><i class="fa-solid fa-chevron-right"></i> Image Gallery</a>
-                </li>
-                <li onclick="switchTab(event, 'tab-brochures')">
-                    <a href="#brochures"><i class="fa-solid fa-chevron-right"></i> Placements Brochures</a>
-                </li>
-                <li onclick="switchTab(event, 'tab-experiences')">
-                    <a href="#experiences"><i class="fa-solid fa-chevron-right"></i> Placements Experiences</a>
-                </li>
-            </ul>
+        <!-- TAB BUTTONS -->
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab-target="tab-overview"><i class="bi bi-info-circle"></i> Cell Overview</button>
+          <button class="tab-btn" data-tab-target="tab-recruiters"><i class="bi bi-buildings"></i> Top Recruiters</button>
+          <button class="tab-btn" data-tab-target="tab-records"><i class="bi bi-table"></i> Placement Records</button>
+          <button class="tab-btn" data-tab-target="tab-training"><i class="bi bi-award"></i> Training &amp; Preparation</button>
+          <button class="tab-btn" data-tab-target="tab-team"><i class="bi bi-person-lines-fill"></i> Placement Team</button>
+          <button class="tab-btn" data-tab-target="tab-faq"><i class="bi bi-question-circle"></i> FAQs</button>
         </div>
 
-        <!-- Content Panel -->
-        <div class="content-panel">
-
-            <!-- 1. Training & Placement Cell Tab -->
-            <div id="tab-cell" class="tab-content active">
-                <h3 class="content-title">Training & Placement Cell: Objectives</h3>
-                <ul class="objectives-list">
-                    <li>To maintain a good liaison with industry in and around the place of the campus</li>
-                    <li>To arrange campus interviews, in-plant training</li>
-                    <li>To arrange sponsored projects for both staff and final year students</li>
-                    <li>To create data bank of personnel who are experts in their respective field from industries / research / service organization</li>
-                    <li>To arrange the expert lectures for the benefit of students and staff members</li>
-                    <li>To arrange training to staff members in industries / research / services organization</li>
-                    <li>To create data bank of the alumni who are placed in reputed industries / research / service organization</li>
-                    <li>To assist in organizing field visit for staff and students</li>
-                    <li>To assist for apprenticeship training for students</li>
-                </ul>
-
-                <h3 class="content-title" style="font-size: 18px; margin-top: 30px;">Training & Placement Committee</h3>
-                <div class="table-responsive">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name of Authority</th>
-                                <th>Designation</th>
-                                <th>Department</th>
-                                <th>Email</th>
-                                <th>Mobile Number</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Dr. Pradeep R. Solanki</td>
-                                <td>Training & Placement Officer</td>
-                                <td>Mechanical Engineering</td>
-                                <td>solanki.pradeep@sscoetjalgaon.ac.in</td>
-                                <td>9421519446</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Dr. R.K. SARKAR</td>
-                                <td>Asst. Placement Officer</td>
-                                <td>Computer Engineering</td>
-                                <td>rajput.sarkarshina@sscoetjalgaon.ac.in</td>
-                                <td>9421262620</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <!-- TAB 1: OVERVIEW -->
+        <div class="tab-panel active" id="tab-overview">
+          <div class="welcome-grid">
+            <div class="welcome-side">
+              <div class="eyebrow">PLACEMENTS CELL</div>
+              <div class="welcome-number">85% <span>Eligible Placed</span></div>
+              <div class="welcome-accent"></div>
             </div>
-
-            <!-- 2. Our Recruiters Tab -->
-            <div id="tab-recruiters" class="tab-content">
-                <h3 class="content-title">Our Recruiting Partners</h3>
-                <p style="margin-bottom: 20px; color: #555; font-size: 14px;">We maintain strong corporate partnerships with leading global enterprises and tech giants.</p>
-                
-                <div class="table-responsive">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Company Name</th>
-                                <th>Industry Sector</th>
-                                <th>Average Package (LPA)</th>
-                                <th>Roles Offered</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Tata Consultancy Services (TCS)</strong></td>
-                                <td>Information Technology</td>
-                                <td>₹ 4.5 LPA</td>
-                                <td>Software Engineer, Ninja, Digital</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Infosys</strong></td>
-                                <td>Information Technology</td>
-                                <td>₹ 4.2 LPA</td>
-                                <td>Systems Engineer, Operations Executive</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Wipro</strong></td>
-                                <td>Information Technology</td>
-                                <td>₹ 4.0 LPA</td>
-                                <td>Project Engineer</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Accenture</strong></td>
-                                <td>Consulting & Technology</td>
-                                <td>₹ 4.8 LPA</td>
-                                <td>Associate Software Engineer</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Cognizant</strong></td>
-                                <td>Information Technology</td>
-                                <td>₹ 4.3 LPA</td>
-                                <td>GenC Programmer</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="welcome-main">
+              <h2>Committed to nurturing <em>industry-ready graduates.</em></h2>
+              <p class="lead">The Training &amp; Placement Cell serves as the institutional interface between corporate recruiters and students from BCA, BBA, B.Sc. Computer Science, Commerce, and Arts.</p>
+              <p>Our philosophy is grounded in comprehensive, continuous training. From the beginning of second year, students undergo systematic grooming in communicative English, algorithmic problem solving, quantitative aptitude, mock interviews, and group discussions.</p>
+              <p>The cell actively liaises with IT corporations, banking institutions, manufacturing units, and startups to facilitate on-campus, pooled, and off-campus recruitment drives throughout the academic calendar.</p>
+              <div style="display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap;">
+                <a href="#tab-recruiters" onclick="document.querySelector('[data-tab-target=tab-recruiters]').click()" class="button button-gold">View Partner Companies <i class="bi bi-arrow-right"></i></a>
+                <a href="admission.html#enquiry" class="button button-outline-light" style="color: var(--navy); border-color: var(--navy);">Admissions 2026-27 <i class="bi bi-mortarboard"></i></a>
+              </div>
             </div>
-
-            <!-- 3. Placement Record Tab -->
-            <div id="tab-record" class="tab-content">
-                <h3 class="content-title">Annual Placement Statistics (2024 - 2026)</h3>
-                <p style="margin-bottom: 20px; color: #555; font-size: 14px;">Consistent record of high placement percentages across various disciplines.</p>
-
-                <div class="table-responsive">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Academic Year</th>
-                                <th>Total Eligible Students</th>
-                                <th>Students Placed</th>
-                                <th>Placement Percentage</th>
-                                <th>Highest Package</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2025 - 2026 (Ongoing)</td>
-                                <td>280</td>
-                                <td>210</td>
-                                <td>75%</td>
-                                <td>₹ 8.5 LPA</td>
-                            </tr>
-                            <tr>
-                                <td>2024 - 2025</td>
-                                <td>310</td>
-                                <td>245</td>
-                                <td>79%</td>
-                                <td>₹ 9.0 LPA</td>
-                            </tr>
-                            <tr>
-                                <td>2023 - 2024</td>
-                                <td>290</td>
-                                <td>215</td>
-                                <td>74%</td>
-                                <td>₹ 7.5 LPA</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="welcome-photo">
+              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=85" alt="Interview and Placement Session" loading="lazy">
+              <div class="photo-caption">
+                <i class="bi bi-building"></i>
+                <span>
+                  <strong>120+ Corporate Recruiters</strong>
+                  <small>Campus Placement Drives</small>
+                </span>
+              </div>
             </div>
-
-            <!-- 4. Image Gallery Tab -->
-            <div id="tab-gallery" class="tab-content">
-                <h3 class="content-title">Placement Gallery & Campus Drives</h3>
-                <p style="margin-bottom: 20px; color: #555; font-size: 14px;">Glimpses of recruitment drives, pre-placement talks, and felicitations.</p>
-
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" alt="Drive">
-                        <p>TCS Campus Drive</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Seminar">
-                        <p>Pre-Placement Seminar</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=400&q=80" alt="Interview">
-                        <p>Personal Interview Round</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80" alt="Offer Letter">
-                        <p>Offer Letter Distribution</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. Placements Brochures Tab -->
-            <div id="tab-brochures" class="tab-content">
-                <h3 class="content-title">Placement Brochures & Downloads</h3>
-                <p style="margin-bottom: 20px; color: #555; font-size: 14px;">Download placement brochures for corporate recruiters and prospective students.</p>
-
-                <div class="brochure-card">
-                    <div class="brochure-info">
-                        <h4>Placement Brochure 2026-27</h4>
-                        <p>Contains department-wise student profiles, faculty coordinators, and placement policies.</p>
-                    </div>
-                    <a href="#" class="download-btn"><i class="fa-solid fa-download"></i> Download PDF</a>
-                </div>
-
-                <div class="brochure-card">
-                    <div class="brochure-info">
-                        <h4>Corporate Invitation Flyer</h4>
-                        <p>Overview of infrastructure, labs, and key statistics for visiting HR teams.</p>
-                    </div>
-                    <a href="#" class="download-btn"><i class="fa-solid fa-download"></i> Download PDF</a>
-                </div>
-
-                <div class="brochure-card">
-                    <div class="brochure-info">
-                        <h4>Internship Policy Guidelines</h4>
-                        <p>Detailed guidelines regarding mandatory final-year corporate internships.</p>
-                    </div>
-                    <a href="#" class="download-btn"><i class="fa-solid fa-download"></i> Download PDF</a>
-                </div>
-            </div>
-
-            <!-- 6. Placements Experiences Tab -->
-            <div id="tab-experiences" class="tab-content">
-                <h3 class="content-title">Student Placement Experiences</h3>
-                <p style="margin-bottom: 20px; color: #555; font-size: 14px;">Read success stories and preparation strategies shared by our placed alumni.</p>
-
-                <div class="experience-box">
-                    <h4>Aakash Sharma (Software Engineer at TCS)</h4>
-                    <span>B.Sc. Computer Science (Batch of 2025)</span>
-                    <p>"The mock interview drills and technical coding classes organized by the T&P cell helped me crack the rigorous technical and HR rounds with confidence."</p>
-                </div>
-
-                <div class="experience-box">
-                    <h4>Priya Patil (Systems Engineer at Infosys)</h4>
-                    <span>BCA (Batch of 2025)</span>
-                    <p>"Constant mentorship and aptitude workshops gave me a clear direction. I am grateful to the placement faculty for continuous support throughout the drive."</p>
-                </div>
-
-                <div class="experience-box">
-                    <h4>Rohit Deshmukh (Associate at Accenture)</h4>
-                    <span>B.Sc. Data Science (Batch of 2024)</span>
-                    <p>"The practical labs and project-based learning model at SSBT equipped me with the exact tech stack required by top product and service companies."</p>
-                </div>
-            </div>
-
+          </div>
         </div>
 
+        <!-- TAB 2: RECRUITERS -->
+        <div class="tab-panel" id="tab-recruiters">
+          <div class="section-heading heading-row">
+            <div>
+              <div class="eyebrow">OUR VALUED PARTNERS</div>
+              <h2>Leading Corporate <em>Recruiters.</em></h2>
+            </div>
+            <p>Our graduates are employed at renowned multinational organizations across technology, consulting, banking, and retail sectors.</p>
+          </div>
+
+          <div class="recruiter-grid">
+            <div class="recruiter-card"><strong>Tata Consultancy Services (TCS)</strong><span>IT &amp; Consulting</span></div>
+            <div class="recruiter-card"><strong>Infosys Limited</strong><span>Enterprise Tech</span></div>
+            <div class="recruiter-card"><strong>Wipro Technologies</strong><span>Global Software</span></div>
+            <div class="recruiter-card"><strong>Tech Mahindra</strong><span>Digital Solutions</span></div>
+            <div class="recruiter-card"><strong>Capgemini</strong><span>IT &amp; Management</span></div>
+            <div class="recruiter-card"><strong>Cognizant (CTS)</strong><span>Cloud &amp; Digital</span></div>
+            <div class="recruiter-card"><strong>L&amp;T Infotech (LTIMindtree)</strong><span>Engineering IT</span></div>
+            <div class="recruiter-card"><strong>HCL Technologies</strong><span>Infrastructure &amp; Dev</span></div>
+            <div class="recruiter-card"><strong>Hexaware Technologies</strong><span>Automation &amp; Cloud</span></div>
+            <div class="recruiter-card"><strong>HDFC Bank</strong><span>Financial Services</span></div>
+            <div class="recruiter-card"><strong>ICICI Bank</strong><span>Retail &amp; Corporate</span></div>
+            <div class="recruiter-card"><strong>Dmart (Avenue Supermarts)</strong><span>Retail Management</span></div>
+          </div>
+
+          <div style="background: var(--paper); border: 1px solid var(--line); padding: 30px; margin-top: 36px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div>
+              <h3 style="font-family: var(--serif); font-size: 22px; color: var(--navy); margin-bottom: 6px;">Are you a Corporate Recruiter?</h3>
+              <p style="font-size: 13px; color: var(--muted); margin: 0;">Invite our talented BCA, BBA, and B.Sc. students for campus recruitment drives, internships, or pooled interviews.</p>
+            </div>
+            <a href="contact.html" class="button button-gold">Connect with Placement Cell <i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </div>
+
+        <!-- TAB 3: RECORDS -->
+        <div class="tab-panel" id="tab-records">
+          <div class="section-heading heading-row">
+            <div>
+              <div class="eyebrow">ANNUAL HIGHLIGHTS</div>
+              <h2>Recent Placement <em>Statistics.</em></h2>
+            </div>
+            <p>Demonstrating our year-on-year consistency in driving student employability and career transitions.</p>
+          </div>
+
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Academic Year</th>
+                  <th>Companies Visited</th>
+                  <th>Students Registered</th>
+                  <th>Total Job Offers</th>
+                  <th>Highest Package (LPA)</th>
+                  <th>Average Package (LPA)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>2025 - 2026</strong></td>
+                  <td>120+</td>
+                  <td>320</td>
+                  <td>285</td>
+                  <td>₹ 6.50 LPA</td>
+                  <td>₹ 3.40 LPA</td>
+                </tr>
+                <tr>
+                  <td><strong>2024 - 2025</strong></td>
+                  <td>110+</td>
+                  <td>300</td>
+                  <td>262</td>
+                  <td>₹ 6.00 LPA</td>
+                  <td>₹ 3.20 LPA</td>
+                </tr>
+                <tr>
+                  <td><strong>2023 - 2024</strong></td>
+                  <td>98</td>
+                  <td>280</td>
+                  <td>240</td>
+                  <td>₹ 5.50 LPA</td>
+                  <td>₹ 3.00 LPA</td>
+                </tr>
+                <tr>
+                  <td><strong>2022 - 2023</strong></td>
+                  <td>85</td>
+                  <td>260</td>
+                  <td>215</td>
+                  <td>₹ 5.00 LPA</td>
+                  <td>₹ 2.80 LPA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 4: TRAINING -->
+        <div class="tab-panel" id="tab-training">
+          <div class="section-heading heading-row">
+            <div>
+              <div class="eyebrow">CAREER READINESS</div>
+              <h2>Structured Placement <em>Training Modules.</em></h2>
+            </div>
+            <p>Our 4-tier preparation curriculum ensures every student develops technical prowess, problem solving capabilities, and interview poise.</p>
+          </div>
+
+          <div class="feature-grid-4">
+            <div class="feature-box">
+              <div class="feature-box-icon"><i class="bi bi-chat-left-quote"></i></div>
+              <h3>Communication &amp; Soft Skills</h3>
+              <p>Professional business English, email etiquette, presentation skills, body language, and team building exercises.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-box-icon"><i class="bi bi-calculator"></i></div>
+              <h3>Quantitative Aptitude &amp; Reasoning</h3>
+              <p>Fast mental arithmetic, logical reasoning, data interpretation, probability, and corporate aptitude test series.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-box-icon"><i class="bi bi-code-slash"></i></div>
+              <h3>Technical Bootcamps</h3>
+              <p>Hands-on coding bootcamps in Python, Java, Data Structures, SQL databases, and full-stack software development.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-box-icon"><i class="bi bi-person-video3"></i></div>
+              <h3>Mock GD &amp; Technical Interviews</h3>
+              <p>One-on-one mock interviews conducted by corporate HR veterans with detailed actionable feedback.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: TEAM -->
+        <div class="tab-panel" id="tab-team">
+          <div class="section-heading heading-row">
+            <div>
+              <div class="eyebrow">COORDINATION CELL</div>
+              <h2>Training &amp; Placement <em>Officers.</em></h2>
+            </div>
+            <p>Dedicated faculty coordinators guiding student placement drives, industry internships, and career counselling.</p>
+          </div>
+
+          <div class="faculty-grid-4">
+            <div class="faculty-member-card">
+              <div class="faculty-avatar-circle"><i class="bi bi-person-fill"></i></div>
+              <h4>Training &amp; Placement Officer</h4>
+              <div class="member-role">Head, Placement Cell</div>
+              <div class="member-dept">0257 - 2285931 / Ext. 94</div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">placement@ssacscjalgaon.ac.in</div>
+            </div>
+            <div class="faculty-member-card">
+              <div class="faculty-avatar-circle"><i class="bi bi-person-fill"></i></div>
+              <h4>BCA Placement Coordinator</h4>
+              <div class="member-role">Dept. of Computer Applications</div>
+              <div class="member-dept">SSBT College Campus</div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">bca.placement@ssacscjalgaon.ac.in</div>
+            </div>
+            <div class="faculty-member-card">
+              <div class="faculty-avatar-circle"><i class="bi bi-person-fill"></i></div>
+              <h4>BBA Placement Coordinator</h4>
+              <div class="member-role">Dept. of Business Administration</div>
+              <div class="member-dept">SSBT College Campus</div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">bba.placement@ssacscjalgaon.ac.in</div>
+            </div>
+            <div class="faculty-member-card">
+              <div class="faculty-avatar-circle"><i class="bi bi-person-fill"></i></div>
+              <h4>B.Sc. Placement Coordinator</h4>
+              <div class="member-role">Dept. of Computer Science</div>
+              <div class="member-dept">SSBT College Campus</div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">bsc.placement@ssacscjalgaon.ac.in</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 6: FAQ -->
+        <div class="tab-panel" id="tab-faq">
+          <div class="section-heading heading-row">
+            <div>
+              <div class="eyebrow">FREQUENTLY ASKED</div>
+              <h2>Placement Cell <em>FAQs.</em></h2>
+            </div>
+            <p>Common questions from final year students and recruiters regarding campus placement drives.</p>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>When does campus placement training begin for undergraduate students?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Foundational aptitude and soft skills sessions commence in Semester 3 (Second Year), while intensive company-specific training and recruitment drives take place during Semesters 5 and 6 (Final Year).
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Are internships provided prior to final year graduation?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Yes, students are actively assisted with summer internships, live industrial projects, and winter training across IT enterprises and local business organizations.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What are the eligibility criteria for participating in campus drives?</span>
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                Most premier IT recruiters specify minimum 60% aggregate marks with no active backlogs. However, several corporate partners recruit students with 50-55% or any passing score based on aptitude and coding tests.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="closing-cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow eyebrow-light">START YOUR JOURNEY</div>
+          <h2>Prepare for your<br><em>dream career.</em></h2>
+        </div>
+        <div class="cta-right">
+          <p>Join SSBT's Arts, Commerce &amp; Science College. Admissions are currently open for BCA, BBA, B.Sc. Computer Science and other programmes for 2026-27.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="admission.html#enquiry" class="button button-gold">Apply for Admission <i class="bi bi-arrow-up-right"></i></a>
+            <a href="departments.html" class="button button-outline-light">Explore Departments <i class="bi bi-journal-bookmark"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- UNIFIED SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-about">
+        <a class="brand brand-footer" href="index.html">
+          <span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span>
+          <span class="brand-copy">
+            <strong>SSBT's Arts, Commerce<br>&amp; Science College</strong>
+            <small>Bambhori, Jalgaon</small>
+          </span>
+        </a>
+        <p>Shram Sadhana Bombay Trust Sanchalit Arts, Commerce &amp; Science College provides quality higher education across Arts, Commerce, Science, Computer Applications and Management disciplines.</p>
+        <span class="footer-location"><i class="bi bi-geo-alt-fill"></i> Bambhori, Jalgaon, Maharashtra – 425001</span>
+        <span class="footer-location"><i class="bi bi-telephone-fill"></i> 0257-2285931 / 93 / 94</span>
+        <span class="footer-location"><i class="bi bi-envelope-fill"></i> ssacscjalgaon@gmail.com</span>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About SSBT</a>
+        <a href="departments.html">Academic Departments</a>
+        <a href="admission.html">Admissions 2026-27</a>
+        <a href="placement.html">Training &amp; Placements</a>
+        <a href="student-corner.html">Student Corner Portal</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-column">
+        <h3>Academic Programs</h3>
+        <a href="departments.html#bca">B.C.A. (Computer Applications)</a>
+        <a href="departments.html#bba">B.B.A. (Business Administration)</a>
+        <a href="departments.html#bsc">B.Sc. Computer Science</a>
+        <a href="departments.html#data-science">B.Sc. Data Science</a>
+        <a href="departments.html#arts">Bachelor of Arts (B.A.)</a>
+        <a href="departments.html#commerce">Bachelor of Commerce (B.Com)</a>
+      </div>
+      <div class="footer-contact">
+        <h3>Admissions &amp; Enquiries</h3>
+        <p>Admissions are now open for the academic year 2026-27. Submit your enquiry online or visit our campus admissions office.</p>
+        <a href="admission.html#enquiry" class="button button-small button-gold" style="margin-bottom: 15px;">Apply for Admission <i class="bi bi-arrow-up-right"></i></a>
+        <p class="social-note"><i class="bi bi-shield-check"></i> Affiliated to KBC North Maharashtra University, Jalgaon. Approved by Govt. of Maharashtra.</p>
+      </div>
     </div>
-
-    <!-- Bottom Callout Banner -->
-    <div class="callout-banner">
-        <div class="callout-text">
-            <h4>Need More Information Regarding Placements?</h4>
-            <p>Contact the training and placement cell team for upcoming drives and company criteria details.</p>
-        </div>
-        <button onclick="openModal()" class="enquiry-btn">Placement Enquiry &rarr;</button>
+    <div class="container footer-bottom">
+      <span>&copy; <span id="currentYear">2026</span> SSBT's Arts, Commerce &amp; Science College, Bambhori, Jalgaon. All Rights Reserved.</span>
+      <a href="#top" class="back-to-top-link">Back to top &uarr;</a>
+      <span>Affiliated to KBCNMU, Jalgaon</span>
     </div>
+  </footer>
 
-    <!-- Enquiry Modal -->
-    <div id="enquiryModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2>Placement Enquiry</h2>
-            <form onsubmit="submitForm(event)">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="tel" placeholder="Mobile Number" required>
-                <textarea placeholder="Your Query..." rows="4" required></textarea>
-                <button type="submit" class="submit-btn">Send Enquiry</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- JavaScript for Tab Switching, Mobile Nav Toggle, and Modal -->
-    <script>
-        function switchTab(evt, tabId) {
-            if(evt) evt.preventDefault();
-
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
-
-            const items = document.querySelectorAll('.sidebar-menu li');
-            items.forEach(item => item.classList.remove('active-tab'));
-
-            document.getElementById(tabId).classList.add('active');
-
-            if(evt && evt.currentTarget) {
-                evt.currentTarget.classList.add('active-tab');
-            }
-        }
-
-        function toggleNav() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Modal Logic
-        function openModal() {
-            document.getElementById("enquiryModal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("enquiryModal").style.display = "none";
-        }
-
-        // Close modal if user clicks outside the box
-        window.onclick = function(event) {
-            let modal = document.getElementById("enquiryModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // Form Submission
-        function submitForm(event) {
-            event.preventDefault(); 
-            alert("Thank you! Your enquiry has been sent to the Placement Cell.");
-            closeModal();
-        }
-    </script>
-
+  <!-- JAVASCRIPT -->
+  <script src="js/script.js"></script>
 </body>
 </html>
