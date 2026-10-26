@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,4 +18,692 @@
 
     <script type="module" src="/src/main.jsx"></script>
   </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Corner | Arts, Commerce & Science College</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-left">
+            <span>✉ info@college.ac.in</span>
+            <span>☎ +91 12345 67890</span>
+        </div>
+
+        <div class="top-right">
+            <a href="#" onclick="openModal('Student Login')">Student Login</a>
+            <span>|</span>
+            <a href="#" onclick="openModal('Staff Login')">Staff Login</a>
+            <a href="#" class="apply-btn" onclick="openModal('Admission Enquiry')">Apply Now</a>
+        </div>
+    </div>
+
+
+    <!-- COLLEGE HEADER -->
+    <header class="college-header">
+
+        <div class="college-brand">
+
+            <div class="college-logo">
+                <div class="logo-symbol">S</div>
+            </div>
+
+            <div class="college-name">
+                <small>SHRAM SADHANA BOMBAY TRUST SANCHALIT</small>
+
+                <h1>ARTS, COMMERCE & SCIENCE COLLEGE</h1>
+
+                <p>Bambhori, Jalgaon (Maharashtra)</p>
+            </div>
+
+        </div>
+
+        <div class="college-info">
+
+            <div class="info-item">
+                <span class="info-icon">★</span>
+                <div>
+                    <small>NAAC Accredited</small>
+                    <strong>'B' Grade</strong>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-icon">◆</span>
+                <div>
+                    <small>Affiliated to</small>
+                    <strong>KBCNMU, Jalgaon</strong>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+
+        <div class="nav-container">
+
+            <a href="#home">Home</a>
+            <a href="#">About Us</a>
+            <a href="#courses">Courses <span>⌄</span></a>
+            <a href="#">Admissions <span>⌄</span></a>
+            <a href="#">Departments <span>⌄</span></a>
+            <a href="#">Events</a>
+            <a href="#">Facilities</a>
+            <a href="#">Placement</a>
+            <a href="#studentCorner" class="active">Student Corner</a>
+            <a href="#">Contact Us</a>
+
+            <button class="search-btn" onclick="openSearch()" aria-label="Search">
+                ⌕
+            </button>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="breadcrumb">
+                Home &nbsp;›&nbsp; Student Corner
+            </div>
+
+            <span class="hero-label">
+                STUDENT CORNER
+            </span>
+
+            <h2>
+                Your Academic Journey,
+                <strong>All in One Place</strong>
+            </h2>
+
+            <p>
+                Access notices, study material, results, timetables, scholarships and student activities.
+            </p>
+
+            <div class="hero-line"></div>
+
+        </div>
+
+        <div class="hero-campus">
+            <div class="campus-content">
+                <span class="campus-icon">⌂</span>
+                <strong>COLLEGE CAMPUS</strong>
+                <small>Learn • Grow • Succeed</small>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- MAIN -->
+    <main id="studentCorner">
+
+
+        <!-- COURSES -->
+        <section class="course-section" id="courses">
+
+            <div class="section-heading">
+
+                <div>
+                    <span>ACADEMIC PROGRAMS</span>
+
+                    <h2>Select Your Course</h2>
+
+                    <p>
+                        Choose your course to access relevant resources and information.
+                    </p>
+                </div>
+
+                <div class="heading-note">
+                    Build Your Future With Us
+                </div>
+
+            </div>
+
+
+            <div class="course-grid">
+
+                <button class="course-card bca" onclick="selectCourse('BCA')">
+
+                    <div class="course-icon">
+                        <span>&lt;/&gt;</span>
+                    </div>
+
+                    <div class="course-text">
+                        <h3>B.C.A.</h3>
+                        <p>Bachelor of Computer Applications</p>
+                    </div>
+
+                    <span class="arrow">→</span>
+
+                </button>
+
+
+                <button class="course-card bsc" onclick="selectCourse('BSC')">
+
+                    <div class="course-icon">
+                        <span>⚗</span>
+                    </div>
+
+                    <div class="course-text">
+                        <h3>B.Sc.</h3>
+                        <p>Bachelor of Science</p>
+                    </div>
+
+                    <span class="arrow">→</span>
+
+                </button>
+
+
+                <button class="course-card bba" onclick="selectCourse('BBA')">
+
+                    <div class="course-icon">
+                        <span>↗</span>
+                    </div>
+
+                    <div class="course-text">
+                        <h3>B.B.A.</h3>
+                        <p>Bachelor of Business Administration</p>
+                    </div>
+
+                    <span class="arrow">→</span>
+
+                </button>
+
+
+                <button class="course-card all" onclick="selectCourse('ALL')">
+
+                    <div class="course-icon">
+                        <span>▦</span>
+                    </div>
+
+                    <div class="course-text">
+                        <h3>All Courses</h3>
+                        <p>View all academic programs</p>
+                    </div>
+
+                    <span class="arrow">→</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- COURSE RESULT -->
+        <section class="course-result" id="courseResult">
+
+            <div class="result-inner">
+
+                <div class="result-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <span>STUDENT RESOURCES</span>
+
+                    <h2 id="courseResultTitle">
+                        Select a course to view resources
+                    </h2>
+
+                    <p id="courseResultText">
+                        Notices, study material, downloads, results and timetable will appear here.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESOURCE AREA -->
+        <section class="resource-area">
+
+
+            <!-- NOTICES -->
+            <div class="notices-box">
+
+                <div class="box-header">
+
+                    <div class="box-title">
+
+                        <span class="title-icon">!</span>
+
+                        <div>
+                            <h2>Latest Notices</h2>
+                            <p>Important announcements for students</p>
+                        </div>
+
+                    </div>
+
+                    <button onclick="showAllNotices()">
+                        View All →
+                    </button>
+
+                </div>
+
+
+                <div class="notice-list">
+
+                    <div class="notice">
+
+                        <div class="notice-date">
+                            <strong>16</strong>
+                            <span>Aug 2026</span>
+                        </div>
+
+                        <div class="notice-content">
+                            <h3>Semester Examination Notice</h3>
+                            <p>Check examination schedule and prepare accordingly.</p>
+                        </div>
+
+                        <button onclick="viewNotice('Semester Examination Notice')">
+                            →
+                        </button>
+
+                    </div>
+
+
+                    <div class="notice">
+
+                        <div class="notice-date">
+                            <strong>12</strong>
+                            <span>Aug 2026</span>
+                        </div>
+
+                        <div class="notice-content">
+                            <h3>Assignment Submission Notice</h3>
+                            <p>Submit pending assignments before the deadline.</p>
+                        </div>
+
+                        <button onclick="viewNotice('Assignment Submission Notice')">
+                            →
+                        </button>
+
+                    </div>
+
+
+                    <div class="notice">
+
+                        <div class="notice-date">
+                            <strong>08</strong>
+                            <span>Aug 2026</span>
+                        </div>
+
+                        <div class="notice-content">
+                            <h3>Student Activity Registration</h3>
+                            <p>Registration is open for upcoming activities.</p>
+                        </div>
+
+                        <button onclick="viewNotice('Student Activity Registration')">
+                            →
+                        </button>
+
+                    </div>
+
+
+                    <div class="notice">
+
+                        <div class="notice-date">
+                            <strong>02</strong>
+                            <span>Aug 2026</span>
+                        </div>
+
+                        <div class="notice-content">
+                            <h3>Library Membership Renewal</h3>
+                            <p>Renew your library membership.</p>
+                        </div>
+
+                        <button onclick="viewNotice('Library Membership Renewal')">
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACADEMIC RESOURCES -->
+            <div class="academic-box">
+
+                <div class="box-header">
+
+                    <div class="box-title">
+
+                        <span class="title-icon">◆</span>
+
+                        <div>
+                            <h2>Academic Resources</h2>
+                            <p>Quick access to essential academic services</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="resource-grid">
+
+                    <button class="resource-card study" onclick="openResource('study')">
+
+                        <span class="resource-icon">▤</span>
+
+                        <div>
+                            <h3>Study Material</h3>
+                            <p>Notes and study resources</p>
+                        </div>
+
+                        <span class="resource-arrow">→</span>
+
+                    </button>
+
+
+                    <button class="resource-card download" onclick="openResource('downloads')">
+
+                        <span class="resource-icon">↓</span>
+
+                        <div>
+                            <h3>Downloads</h3>
+                            <p>Forms and documents</p>
+                        </div>
+
+                        <span class="resource-arrow">→</span>
+
+                    </button>
+
+
+                    <button class="resource-card result" onclick="openResource('results')">
+
+                        <span class="resource-icon">▥</span>
+
+                        <div>
+                            <h3>Results</h3>
+                            <p>Examination results</p>
+                        </div>
+
+                        <span class="resource-arrow">→</span>
+
+                    </button>
+
+
+                    <button class="resource-card timetable" onclick="openResource('timetable')">
+
+                        <span class="resource-icon">▣</span>
+
+                        <div>
+                            <h3>Timetable</h3>
+                            <p>Class and exam schedule</p>
+                        </div>
+
+                        <span class="resource-arrow">→</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DYNAMIC PANEL -->
+        <section class="dynamic-section" id="dynamicSection">
+
+            <div id="dynamicContent">
+
+                <div class="dynamic-empty">
+                    <div>▣</div>
+                    <h2>Student Resource Center</h2>
+                    <p>
+                        Select a course or academic resource to view detailed information.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUPPORT -->
+        <section class="support-section">
+
+            <div class="support-header">
+
+                <div>
+                    <span>STUDENT SERVICES</span>
+
+                    <h2>Student Support Services</h2>
+
+                    <p>
+                        Various services to support your academic and personal growth.
+                    </p>
+                </div>
+
+                <button onclick="showServices()">
+                    Explore All Services →
+                </button>
+
+            </div>
+
+
+            <div class="support-grid">
+
+                <button onclick="openService('calendar')">
+                    <span>▣</span>
+                    <strong>Academic Calendar</strong>
+                </button>
+
+                <button onclick="openService('clubs')">
+                    <span>♙</span>
+                    <strong>Student Clubs</strong>
+                </button>
+
+                <button onclick="openService('scholarship')">
+                    <span>◇</span>
+                    <strong>Scholarships</strong>
+                </button>
+
+                <button onclick="openService('activities')">
+                    <span>★</span>
+                    <strong>Activities</strong>
+                </button>
+
+                <button onclick="openService('committees')">
+                    <span>◎</span>
+                    <strong>Committees</strong>
+                </button>
+
+                <button onclick="openService('links')">
+                    <span>↗</span>
+                    <strong>Important Links</strong>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div class="footer-col college-footer">
+
+                <div class="footer-logo">S</div>
+
+                <h2>
+                    ARTS, COMMERCE &<br> SCIENCE COLLEGE
+                </h2>
+
+                <p>Bambhori, Jalgaon (Maharashtra)</p>
+
+                <p class="footer-description">
+                    We are committed to academic excellence, innovation and overall development of students.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>QUICK LINKS</h3>
+
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#courses">Courses</a>
+                <a href="#">Admissions</a>
+                <a href="#">Events</a>
+                <a href="#">Contact Us</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>COURSES</h3>
+
+                <a href="#">B.Sc.</a>
+                <a href="#">B.Com.</a>
+                <a href="#">B.A.</a>
+                <a href="#">BBA</a>
+                <a href="#">BCA</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>CONTACT US</h3>
+
+                <p>📍 Bambhori, Jalgaon – 425002</p>
+                <p>☎ +91 12345 67890</p>
+                <p>✉ info@college.ac.in</p>
+                <p>◷ Mon - Sat : 9:00 AM - 5:00 PM</p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>FOLLOW US</h3>
+
+                <div class="social-icons">
+                    <a href="#">f</a>
+                    <a href="#">◎</a>
+                    <a href="#">▶</a>
+                    <a href="#">in</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Arts, Commerce & Science College,
+                Bambhori, Jalgaon. All Rights Reserved.
+            </span>
+
+            <span>
+                Designed with ♥ by Student Web Team
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" onclick="goTop()">↑</button>
+
+
+    <!-- MODAL -->
+    <div id="modalOverlay" class="modal-overlay">
+
+        <div class="professional-modal">
+
+            <button class="modal-close" onclick="closeModal()">×</button>
+
+            <div class="modal-icon-large" id="modalIcon">◆</div>
+
+            <span class="modal-label">STUDENT CORNER</span>
+
+            <h2 id="modalTitle">Information</h2>
+
+            <p id="modalText">
+                Information will appear here.
+            </p>
+
+            <div class="modal-divider"></div>
+
+            <div id="modalExtra"></div>
+
+            <button class="modal-primary" onclick="closeModal()">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH MODAL -->
+    <div id="searchOverlay" class="modal-overlay">
+
+        <div class="professional-modal search-modal">
+
+            <button class="modal-close" onclick="closeSearch()">×</button>
+
+            <div class="modal-icon-large">⌕</div>
+
+            <span class="modal-label">SEARCH</span>
+
+            <h2>Search Student Corner</h2>
+
+            <div class="global-search-box">
+
+                <input type="text" id="searchInput" placeholder="Search notices, results, timetable..." onkeyup="performSearch()">
+
+            </div>
+
+            <div id="searchResults" class="search-results">
+                <div class="search-hint">
+                    Type something to search.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+>>>>>>> 2622380f20a590d81dc2167bb6710bac083a0d53
 </html>
